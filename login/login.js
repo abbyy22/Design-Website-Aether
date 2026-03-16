@@ -34,6 +34,7 @@ function handleLogin() {
 
   if (isValid) {
     showToast('✓ Login successful! Welcome back, ' + name + '.');
+    window.location.href = '../aetherWeb/home.html';
   }
 }
 
