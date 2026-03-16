@@ -1,0 +1,267 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --brown:      #7B5C58;
+  --brown-dark: #6A4D49;
+  --cream:      #EDEAE4;
+  --input-bg:   #D9D3CC;
+  --white:      #FFFFFF;
+  --text-dark:  #2C2C2C;
+  --text-hero:  #8C7B78;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: var(--cream);
+  overflow: hidden;
+}
+
+.page {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.left {
+  width: 41%;
+  min-width: 340px;
+  background: var(--brown);
+  border-radius: 0 2.8rem 2.8rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 3.5rem;
+  box-shadow: 10px 0 50px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+  position: relative;
+}
+
+.form-box {
+  width: 100%;
+  max-width: 340px;
+  animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-title {
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 2rem;
+  letter-spacing: -0.3px;
+}
+
+.input-wrap {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.input-wrap input {
+  width: 100%;
+  padding: 0.88rem 1.1rem;
+  border: none;
+  border-radius: 0.55rem;
+  background: var(--input-bg);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  outline: none;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-wrap input::placeholder {
+  color: #9E8D8A;
+}
+
+.input-wrap input:focus {
+  background: #ccc5bd;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.eye-btn {
+  position: absolute;
+  right: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9E8D8A;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.eye-btn:hover {
+  color: #5a3e3b;
+}
+
+.eye-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-signup {
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 0.88rem;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-radius: 0.55rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--white);
+  cursor: pointer;
+  letter-spacing: 0.4px;
+  transition: background 0.22s ease, border-color 0.22s ease,
+              transform 0.15s ease, box-shadow 0.22s ease;
+}
+
+.btn-signup:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+.btn-signup:active {
+  transform: translateY(0);
+}
+
+.switch-text {
+  margin-top: 2.2rem;
+  text-align: center;
+  font-size: 0.87rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.switch-text a {
+  color: var(--white);
+  font-weight: 800;
+  text-decoration: none;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.35);
+  padding-bottom: 1px;
+  transition: border-color 0.2s;
+}
+
+.switch-text a:hover {
+  border-color: var(--white);
+}
+
+.field-err {
+  font-size: 0.76rem;
+  color: #ffc9c5;
+  margin-top: -0.5rem;
+  margin-bottom: 0.6rem;
+  padding-left: 0.2rem;
+  display: none;
+}
+
+.input-wrap.has-error input {
+  box-shadow: 0 0 0 2px rgba(255, 90, 70, 0.45);
+}
+
+.right {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand {
+  position: absolute;
+  top: 6rem;
+  left: 3rem;
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: var(--text-dark);
+  letter-spacing: -0.3px;
+  z-index: 3;
+}
+
+.brand span {
+  color: var(--brown);
+}
+
+.hero-copy {
+  position: absolute;
+  top: 50%;
+  left: 3rem;
+  transform: translateY(-52%);
+  z-index: 1;
+  line-height: 1.0;
+  pointer-events: none;
+  max-width: 55%;
+}
+
+.hero-copy h1 {
+  font-size: clamp(3.2rem, 5.8vw, 5.6rem);
+  font-weight: 900;
+  color: #877A71;
+  opacity: 0.42;
+  letter-spacing: -2.5px;
+  display: block;
+}
+
+.student-img {
+  position: absolute;
+  bottom: 0;
+  right: -20%;
+  height: 91%;
+  object-fit: contain;
+  object-position: bottom;
+  z-index: 2;
+  animation: floatIn 0.7s 0.15s ease both;
+}
+
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(16px);
+  background: #2c2c2c;
+  color: #fff;
+  padding: 0.7rem 1.8rem;
+  border-radius: 2rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 99;
+  white-space: nowrap;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

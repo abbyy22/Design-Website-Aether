@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aether — Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+
+<div class="page">
+  <div class="left">
+    <div class="form-box">
+      <div class="form-title">Welcome!</div>
+
+      <div class="input-wrap" id="wrapName">
+        <input type="text" id="loginName" placeholder="Name" autocomplete="username" />
+      </div>
+      <div class="field-err" id="errName">Please enter your name.</div>
+
+      <div class="input-wrap" id="wrapPass">
+        <input type="password" id="loginPass" placeholder="Password" autocomplete="current-password" />
+        <button class="eye-btn" onclick="togglePwd()" aria-label="Show/hide password" tabindex="-1">
+          <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943
+                 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </button>
+      </div>
+      <div class="field-err" id="errPass">Please enter your password.</div>
+
+      <button class="btn-login" onclick="handleLogin()">Login</button>
+
+      <p class="switch-text">
+        Not have account yet? <a href="/register/register.html">Register</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="brand">Aether <span>.</span></div>
+
+    <div class="hero-copy">
+      <h1>Login to</h1>
+      <h1>your</h1>
+      <h1>Account</h1>
+    </div>
+
+    <img class="student-img" src="./assets/student.png" alt="Student" onerror="this.style.display='none'" />
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="login.js"></script>
+</body>
+</html>
