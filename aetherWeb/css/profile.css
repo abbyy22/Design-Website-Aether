@@ -1,0 +1,142 @@
+/* ============================================================
+   AETHER — Profile Page  |  prefix: ae-
+   ============================================================ */
+
+/* ── HERO ── */
+.ae-profile-hero {
+  background: var(--ae-card-bg);
+  border-radius: var(--ae-radius);
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  box-shadow: var(--ae-shadow);
+  margin-bottom: 24px;
+}
+
+/* Avatar wrapper */
+.ae-avatar-wrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+.ae-avatar-initials {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--ae-accent-muted);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; font-weight: 700; color: #fff;
+  transition: filter var(--ae-transition);
+}
+.ae-avatar-img {
+  display: none;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 0; left: 0;
+  transition: filter var(--ae-transition);
+}
+.ae-avatar-wrapper:hover .ae-avatar-initials,
+.ae-avatar-wrapper:hover .ae-avatar-img { filter: brightness(0.82); }
+
+/* Tombol kamera pojok kanan bawah avatar */
+.ae-avatar-cam {
+  position: absolute;
+  bottom: 2px; right: 2px;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--ae-accent);
+  border: 2px solid var(--ae-card-bg);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  z-index: 2;
+  transition: background var(--ae-transition), transform var(--ae-transition);
+}
+.ae-avatar-cam:hover { background: var(--ae-accent-light); transform: scale(1.12); }
+
+/* Tombol teks di bawah nama */
+.ae-avatar-change-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px; font-weight: 500;
+  color: var(--ae-accent);
+  background: rgba(122,92,88,0.08);
+  border: 1px solid rgba(122,92,88,0.15);
+  border-radius: var(--ae-radius);
+  padding: 4px 10px;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: all var(--ae-transition);
+}
+.ae-avatar-change-btn:hover { background: var(--ae-accent); color: #fff; border-color: var(--ae-accent); }
+
+.ae-profile-hero__divider { width: 1px; background: var(--ae-border); align-self: stretch; margin: 0 12px; }
+.ae-profile-hero__name    { font-size: 26px; font-weight: 700; }
+.ae-profile-hero__handle  { font-size: 14px; color: var(--ae-text-muted); margin-top: 2px; }
+.ae-profile-hero__role    { display: flex; flex-direction: column; gap: 6px; }
+.ae-profile-hero__role-label { font-size: 13px; color: var(--ae-text-secondary); }
+
+/* ── DATA SECTION ── */
+.ae-data-section {
+  background: var(--ae-card-bg);
+  border-radius: var(--ae-radius);
+  padding: 24px 28px;
+  box-shadow: var(--ae-shadow);
+  margin-bottom: 24px;
+}
+.ae-data-section__title { font-size: 16px; font-weight: 600; margin-bottom: 18px; }
+.ae-data-section__actions { display: flex; gap: 10px; margin-top: 20px; }
+
+.ae-edit-indicator {
+  font-size: 11px;
+  color: var(--ae-accent);
+  margin-top: 4px;
+  display: none;
+  align-items: center;
+  gap: 4px;
+}
+.ae-edit-indicator.visible { display: flex; }
+
+/* ── EXPERIENCE ── */
+.ae-exp-section__title { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.ae-exp-card {
+  background: var(--ae-card-bg);
+  border-radius: var(--ae-radius);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: var(--ae-shadow);
+  margin-top: 14px;
+  position: relative;
+}
+.ae-exp-card__avatar {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--ae-accent-muted);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 700; color: #fff; flex-shrink: 0;
+}
+.ae-exp-card__company  { font-weight: 600; font-size: 14px; }
+.ae-exp-card__location { font-size: 12px; color: var(--ae-text-muted); }
+.ae-exp-card__fields   { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 12px; flex: 1; }
+.ae-exp-card__delete {
+  position: absolute; top: 12px; right: 14px;
+  background: none; border: none; cursor: pointer;
+  color: var(--ae-text-muted);
+  transition: color var(--ae-transition);
+}
+.ae-exp-card__delete:hover { color: #c0504a; }
+
+.ae-exp-actions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

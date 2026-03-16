@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Aether — Chat</title>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/chat.css"/>
+</head>
+<body>
+
+<aside class="ae-sidebar">
+  <div class="ae-logo">Aether <span class="ae-logo__dot">•</span></div>
+  <nav class="ae-nav">
+    <a class="ae-nav__item" href="profil.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>Profil
+    </a>
+    <a class="ae-nav__item active" href="chat.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Chat
+    </a>
+    <a class="ae-nav__item" href="home.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home
+    </a>
+  </nav>
+  <div class="ae-sidebar__bottom">
+    <a href="profil.html" class="ae-sidebar__avatar">AN</a>
+    <button class="ae-sidebar__exit" onclick="openModal('ae-modal-exit')">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Exit
+    </button>
+  </div>
+</aside>
+
+<main class="ae-main active" id="ae-page-chat">
+  <div class="ae-chat-layout">
+
+    <!-- Kiri: Kontak -->
+    <div class="ae-chat-contacts">
+      <div class="ae-chat-tabs">
+        <button class="ae-chat-tab active" onclick="handleChatTab(this,'all')">Semua</button>
+        <button class="ae-chat-tab" onclick="handleChatTab(this,'unread')">Belum Dibaca</button>
+        <button class="ae-chat-tab" onclick="handleChatTab(this,'favorit')">Favorit</button>
+      </div>
+      <div class="ae-chat-divider"></div>
+      <div class="ae-chat-search">
+        <input class="ae-chat-search__input" type="text" placeholder="Cari kontak..." oninput="handleChatSearch(this.value)"/>
+      </div>
+      <div id="ae-contact-list"></div>
+    </div>
+
+    <!-- Kanan: Chat Window -->
+    <div class="ae-chat-window">
+      <div class="ae-chat-window__header">
+        <div class="ae-chat-window__avatar" id="ae-chat-window-avatar" style="background:#ccc;width:38px;height:38px">–</div>
+        <div class="ae-chat-window__info">
+          <div class="ae-chat-window__name" id="ae-chat-contact-name">Pilih kontak</div>
+          <div class="ae-chat-window__status" id="ae-chat-contact-status" style="color:#bbb">—</div>
+        </div>
+        <div class="ae-chat-window__actions">
+          <button class="ae-chat-action-btn" id="ae-btn-favorit" title="Tandai favorit" onclick="toggleFavorit()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </button>
+          <button class="ae-chat-action-btn" title="Hapus chat" onclick="clearChat()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="ae-chat-messages" id="ae-chat-messages">
+        <div class="ae-chat-empty">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <p>Pilih kontak untuk memulai percakapan.</p>
+        </div>
+      </div>
+
+      <div class="ae-chat-input-area">
+        <div class="ae-chat-input-row">
+          <input type="text" id="ae-chat-input" placeholder="Ketik Pesan"/>
+          <button class="ae-send-btn" onclick="sendMessage()">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2" fill="currentColor" stroke="none"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- MODALS -->
+<div class="ae-modal-overlay" id="ae-modal-confirm-delete">
+  <div class="ae-modal" style="min-width:360px">
+    <div class="ae-modal__header"><span class="ae-modal__title">Konfirmasi Hapus</span><button class="ae-modal__close" onclick="closeModal('ae-modal-confirm-delete')">✕</button></div>
+    <p class="ae-modal__body" id="ae-confirm-delete-text"></p>
+    <div class="ae-modal__footer">
+      <button class="ae-btn ae-btn--secondary" onclick="closeModal('ae-modal-confirm-delete')">Batal</button>
+      <button class="ae-btn ae-btn--danger" id="ae-confirm-delete-btn">Hapus</button>
+    </div>
+  </div>
+</div>
+<div class="ae-modal-overlay" id="ae-modal-exit">
+  <div class="ae-modal" style="min-width:380px;max-width:420px">
+    <div class="ae-modal__header"><span class="ae-modal__title">Apakah Anda yakin ingin keluar?</span><button class="ae-modal__close" onclick="closeModal('ae-modal-exit')">✕</button></div>
+    <p class="ae-modal__body">Anda akan keluar dari Aether. Semua data Anda tetap tersimpan dengan aman.</p>
+    <div class="ae-modal__footer">
+      <button class="ae-btn ae-btn--secondary" onclick="closeModal('ae-modal-exit')">Tidak</button>
+      <button class="ae-btn ae-btn--primary" onclick="closeModal('ae-modal-exit');showToast('Sampai jumpa! 👋','success')">Iya</button>
+    </div>
+  </div>
+</div>
+
+<div class="ae-toast-container" id="ae-toast-container"></div>
+<script src="js/app.js"></script>
+<script src="js/chat.js"></script>
+</body>
+</html>
