@@ -42,7 +42,7 @@ function handleRegister() {
 
   if (isValid) {
     showToast('✓ Account created! Welcome, ' + name + '.');
-    window.location.href = '../aetherWeb/home.html';
+    window.location.href = '../pages/home.html';
   }
 }
 
