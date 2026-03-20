@@ -1,213 +1,308 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Aether — Home</title>
-<link rel="stylesheet" href="../css/style.css"/>
-<link rel="stylesheet" href="../css/home.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aether — Home</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/home.css" />
 </head>
+
 <body>
-
-<aside class="ae-sidebar">
-  <div class="ae-logo">Aether <span class="ae-logo__dot">•</span></div>
-  <nav class="ae-nav">
-    <a class="ae-nav__item" href="../pages/profil.html">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>Profil
+  <!-- Sidebar -->
+  <aside class="ae-sidebar">
+    <!-- Logo -->
+    <a href="../pages/home.html" style="text-decoration: none;">
+      <div class="ae-logo">
+        <img src="../asset/Logo.png" alt="Logo" style="height:36px; width:auto;" />
+      </div>
     </a>
-    <a class="ae-nav__item" href="../pages/chat.html">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Chat
-    </a>
-    <a class="ae-nav__item active" href="../pages/home.html">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home
-    </a>
-  </nav>
-  <div class="ae-sidebar__bottom">
-    <a href="../pages/profil.html" class="ae-sidebar__avatar">AN</a>
-    <button class="ae-sidebar__exit" onclick="openModal('ae-modal-exit')">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Exit
-    </button>
-  </div>
-</aside>
+    <!-- Navigasi Side bar -->
+    <nav class="ae-nav">
+      <a class="ae-nav__item active" href="../pages/home.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          <polyline points="9 22 9 12 15 12 15 22" />
+        </svg>Home
+      </a>
+      <a class="ae-nav__item" href="../pages/profil.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="8" r="4" />
+          <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+        </svg>Profil
+      </a>
+      <a class="ae-nav__item" href="../pages/chat.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        </svg>Chat
+      </a>
+    </nav>
+    <div class="ae-sidebar__bottom">
+      <a href="../pages/profil.html" class="ae-sidebar__avatar">AN</a>
+      <button class="ae-sidebar__exit" onclick="openModal('ae-modal-exit')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+          <polyline points="16 17 21 12 16 7" />
+          <line x1="21" y1="12" x2="9" y2="12" />
+        </svg>Exit
+      </button>
+    </div>
+  </aside>
 
-<main class="ae-main active">
-  <!-- Header -->
-  <div class="ae-home__header">
-    <div class="ae-home__welcome">
-      <h1>Welcome Back, <strong>Anom Nick</strong></h1>
-      <p>Here's what's happening today</p>
-    </div>
-    <div class="ae-user-card">
-      <div class="ae-user-card__avatar">AN</div>
-      <div class="ae-user-card__info">
-        <span class="ae-user-card__name">Anom Nick</span>
-        <span class="ae-user-card__handle">@Anom</span>
-        <span class="ae-role-badge" style="margin-top:4px">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>User
-        </span>
+  <main class="ae-main active">
+    <!-- Header -->
+    <div class="ae-home__header">
+      <div class="ae-home__welcome">
+        <h1>Welcome Back, <strong>Anom Nick</strong></h1>
+        <p>Here's what's happening today</p>
       </div>
-    </div>
-  </div>
-
-  <!-- Stats -->
-  <div class="ae-stats-grid">
-    <div class="ae-stat-card">
-      <div class="ae-stat-card__label">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Total Courses taken
-      </div>
-      <div class="ae-stat-card__value" data-ae-target="3">0</div>
-    </div>
-    <div class="ae-stat-card">
-      <div class="ae-stat-card__label">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>Ongoing Meet
-      </div>
-      <div class="ae-stat-card__value" data-ae-target="3">0</div>
-    </div>
-    <div class="ae-stat-card">
-      <div class="ae-stat-card__label">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Helping User
-      </div>
-      <div class="ae-stat-card__value" data-ae-target="91">0</div>
-    </div>
-    <div class="ae-stat-card">
-      <div class="ae-stat-card__label">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>Avg. Rating
-      </div>
-      <div class="ae-stat-card__value" data-ae-target="45" data-ae-decimal="true">0</div>
-      <div class="ae-stat-card__stars">
-        <svg width="90" height="18" viewBox="0 0 90 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs><linearGradient id="ae-half" x1="0" x2="1" y1="0" y2="0"><stop offset="50%" stop-color="#c0a060"/><stop offset="50%" stop-color="#d4cfc8"/></linearGradient></defs>
-          <polygon points="9,1 11.12,6.26 17,6.91 12.5,11.14 13.76,17 9,14.27 4.24,17 5.5,11.14 1,6.91 6.88,6.26" fill="#c0a060"/>
-          <polygon points="27,1 29.12,6.26 35,6.91 30.5,11.14 31.76,17 27,14.27 22.24,17 23.5,11.14 19,6.91 24.88,6.26" fill="#c0a060"/>
-          <polygon points="45,1 47.12,6.26 53,6.91 48.5,11.14 49.76,17 45,14.27 40.24,17 41.5,11.14 37,6.91 42.88,6.26" fill="#c0a060"/>
-          <polygon points="63,1 65.12,6.26 71,6.91 66.5,11.14 67.76,17 63,14.27 58.24,17 59.5,11.14 55,6.91 60.88,6.26" fill="#c0a060"/>
-          <polygon points="81,1 83.12,6.26 89,6.91 84.5,11.14 85.76,17 81,14.27 76.24,17 77.5,11.14 73,6.91 78.88,6.26" fill="url(#ae-half)"/>
-        </svg>
-      </div>
-    </div>
-  </div>
-
-  <!-- Grid -->
-  <div class="ae-home__grid">
-    <div>
-      <!-- Schedule -->
-      <div class="ae-card" style="margin-bottom:20px">
-        <div class="ae-section-header">
-          <span class="ae-section-title">Ongoing Schedule</span>
-          <button class="ae-btn-view-all" onclick="viewAllSchedule()">☰ View All</button>
-        </div>
-        <div class="ae-schedule-item">
-          <div class="ae-schedule-item__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2"><ellipse cx="12" cy="12" rx="10" ry="10"/><path d="M12 6v6l4 2"/></svg></div>
-          <div class="ae-schedule-item__info">
-            <div class="ae-schedule-item__name">Basis Data</div>
-            <div class="ae-schedule-item__meta">Hari ini | 13.00–14.00</div>
-            <div class="ae-schedule-item__meta">Steven A. | Zoom</div>
+      <!-- User Card -->
+      <a href="../pages/profil.html" style="text-decoration: none;">
+        <div class="ae-user-card">
+          <div class="ae-user-card__avatar">AN</div>
+          <div class="ae-user-card__info">
+            <span class="ae-user-card__name">Anom Nick</span>
+            <span class="ae-user-card__handle">@Anom</span>
+            <span class="ae-role-badge" style="margin-top:4px">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+              </svg>User
+            </span>
           </div>
-          <span class="ae-badge ae-badge--ongoing">Ongoing</span>
         </div>
-        <div class="ae-schedule-item">
-          <div class="ae-schedule-item__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <div class="ae-schedule-item__info">
-            <div class="ae-schedule-item__name">Cyber Security</div>
-            <div class="ae-schedule-item__meta">Besok | 13.00–14.00</div>
-            <div class="ae-schedule-item__meta">Ricard Lee | Zoom</div>
-          </div>
-          <span class="ae-badge ae-badge--upcoming">Upcoming</span>
-        </div>
-      </div>
+      </a>
+    </div>
 
-      <!-- Activity Log -->
-      <div class="ae-card">
-        <div class="ae-section-header">
-          <span class="ae-section-title">Activity Log</span>
-          <button class="ae-btn-view-all" onclick="viewAllActivity()">☰ View All</button>
+    <!-- Stats -->
+    <div class="ae-stats-grid">
+      <div class="ae-stat-card">
+        <div class="ae-stat-card__label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="7" width="20" height="14" rx="2" />
+            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+          </svg>Total Courses taken
         </div>
-        <div class="ae-activity-item">
-          <div class="ae-activity-item__dot ae-dot--green"></div>
-          <div class="ae-activity-item__text">Zoom With Steven A. : Topic "Basis Data"</div>
-          <div class="ae-activity-item__time">12.00</div>
+        <div class="ae-stat-card__value" data-ae-target="3">0</div>
+      </div>
+      <div class="ae-stat-card">
+        <div class="ae-stat-card__label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <polygon points="10 8 16 12 10 16 10 8" />
+          </svg>Ongoing Meet
         </div>
-        <div class="ae-activity-item">
-          <div class="ae-activity-item__dot ae-dot--gray"></div>
-          <div class="ae-activity-item__text">Zoom With Ricard Lee : Topic "Cyber Security"</div>
-          <div class="ae-activity-item__time">13.00</div>
+        <div class="ae-stat-card__value" data-ae-target="3">0</div>
+      </div>
+      <div class="ae-stat-card">
+        <div class="ae-stat-card__label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="8" x2="12" y2="12" />
+            <line x1="12" y1="16" x2="12.01" y2="16" />
+          </svg>Helping User
         </div>
-        <div class="ae-activity-item">
-          <div class="ae-activity-item__dot ae-dot--gray"></div>
-          <div class="ae-activity-item__text">Zoom with Dante : Topic "Data Mining"</div>
-          <div class="ae-activity-item__time">Besok</div>
+        <div class="ae-stat-card__value" data-ae-target="91">0</div>
+      </div>
+      <div class="ae-stat-card">
+        <div class="ae-stat-card__label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="8" y1="6" x2="21" y2="6" />
+            <line x1="8" y1="12" x2="21" y2="12" />
+            <line x1="8" y1="18" x2="21" y2="18" />
+            <line x1="3" y1="6" x2="3.01" y2="6" />
+            <line x1="3" y1="12" x2="3.01" y2="12" />
+            <line x1="3" y1="18" x2="3.01" y2="18" />
+          </svg>Avg. Rating
+        </div>
+        <div class="ae-stat-card__value" data-ae-target="45" data-ae-decimal="true">0</div>
+        <div class="ae-stat-card__stars">
+          <svg width="90" height="18" viewBox="0 0 90 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ae-half" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="50%" stop-color="#c0a060" />
+                <stop offset="50%" stop-color="#d4cfc8" />
+              </linearGradient>
+            </defs>
+            <polygon points="9,1 11.12,6.26 17,6.91 12.5,11.14 13.76,17 9,14.27 4.24,17 5.5,11.14 1,6.91 6.88,6.26"
+              fill="#c0a060" />
+            <polygon
+              points="27,1 29.12,6.26 35,6.91 30.5,11.14 31.76,17 27,14.27 22.24,17 23.5,11.14 19,6.91 24.88,6.26"
+              fill="#c0a060" />
+            <polygon
+              points="45,1 47.12,6.26 53,6.91 48.5,11.14 49.76,17 45,14.27 40.24,17 41.5,11.14 37,6.91 42.88,6.26"
+              fill="#c0a060" />
+            <polygon
+              points="63,1 65.12,6.26 71,6.91 66.5,11.14 67.76,17 63,14.27 58.24,17 59.5,11.14 55,6.91 60.88,6.26"
+              fill="#c0a060" />
+            <polygon
+              points="81,1 83.12,6.26 89,6.91 84.5,11.14 85.76,17 81,14.27 76.24,17 77.5,11.14 73,6.91 78.88,6.26"
+              fill="url(#ae-half)" />
+          </svg>
         </div>
       </div>
     </div>
 
-    <!-- Mentor -->
-    <div>
-      <div class="ae-card">
-        <div class="ae-section-header">
-          <span class="ae-section-title">Recommended Mentor</span>
-          <button class="ae-btn-view-all" onclick="viewAllMentor()">☰ View All</button>
-        </div>
-        <div class="ae-mentor-item" onclick="viewAllMentor()">
-          <div class="ae-mentor-item__avatar" style="background:#9e7a76">J</div>
-          <div class="ae-mentor-item__info">
-            <div class="ae-mentor-item__name">Jessica <span class="ae-mentor-item__star">★</span><span class="ae-mentor-item__rating">4.9</span></div>
-            <div class="ae-mentor-item__sub">Mentor Mata Kuliah Basis Data</div>
+    <!-- Grid -->
+    <div class="ae-home__grid">
+      <div>
+        <!-- Schedule -->
+        <div class="ae-card" style="margin-bottom:20px">
+          <div class="ae-section-header">
+            <span class="ae-section-title">Ongoing Schedule</span>
+            <button class="ae-btn-view-all" onclick="viewAllSchedule()">☰ View All</button>
           </div>
-          <div class="ae-mentor-item__helped">200++ dibantu</div>
-        </div>
-        <div class="ae-mentor-item" onclick="viewAllMentor()">
-          <div class="ae-mentor-item__avatar" style="background:#7a8e9e">R</div>
-          <div class="ae-mentor-item__info">
-            <div class="ae-mentor-item__name">Raymond <span class="ae-mentor-item__star">★</span><span class="ae-mentor-item__rating">4.8</span></div>
-            <div class="ae-mentor-item__sub">Mentor Mata Kuliah Cyber Security</div>
+          <div class="ae-schedule-item">
+            <div class="ae-schedule-item__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="#555" stroke-width="2">
+                <ellipse cx="12" cy="12" rx="10" ry="10" />
+                <path d="M12 6v6l4 2" />
+              </svg></div>
+            <div class="ae-schedule-item__info">
+              <div class="ae-schedule-item__name">Basis Data</div>
+              <div class="ae-schedule-item__meta">Hari ini | 13.00–14.00</div>
+              <div class="ae-schedule-item__meta">Steven A. | Zoom</div>
+            </div>
+            <span class="ae-badge ae-badge--ongoing">Ongoing</span>
           </div>
-          <div class="ae-mentor-item__helped">180++ dibantu</div>
-        </div>
-        <div class="ae-mentor-item" onclick="viewAllMentor()">
-          <div class="ae-mentor-item__avatar" style="background:#7a9e80">M</div>
-          <div class="ae-mentor-item__info">
-            <div class="ae-mentor-item__name">Maya R. <span class="ae-mentor-item__star">★</span><span class="ae-mentor-item__rating">4.7</span></div>
-            <div class="ae-mentor-item__sub">Mentor AI Fundamentals</div>
+          <div class="ae-schedule-item">
+            <div class="ae-schedule-item__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="#555" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg></div>
+            <div class="ae-schedule-item__info">
+              <div class="ae-schedule-item__name">Cyber Security</div>
+              <div class="ae-schedule-item__meta">Besok | 13.00–14.00</div>
+              <div class="ae-schedule-item__meta">Ricard Lee | Zoom</div>
+            </div>
+            <span class="ae-badge ae-badge--upcoming">Upcoming</span>
           </div>
-          <div class="ae-mentor-item__helped">150++ dibantu</div>
+        </div>
+
+        <!-- Activity Log -->
+        <div class="ae-card">
+          <div class="ae-section-header">
+            <span class="ae-section-title">Activity Log</span>
+            <button class="ae-btn-view-all" onclick="viewAllActivity()">☰ View All</button>
+          </div>
+          <div class="ae-activity-item">
+            <div class="ae-activity-item__dot ae-dot--green"></div>
+            <div class="ae-activity-item__text">Zoom With Steven A. : Topic "Basis Data"</div>
+            <div class="ae-activity-item__time">12.00</div>
+          </div>
+          <div class="ae-activity-item">
+            <div class="ae-activity-item__dot ae-dot--gray"></div>
+            <div class="ae-activity-item__text">Zoom With Ricard Lee : Topic "Cyber Security"</div>
+            <div class="ae-activity-item__time">13.00</div>
+          </div>
+          <div class="ae-activity-item">
+            <div class="ae-activity-item__dot ae-dot--gray"></div>
+            <div class="ae-activity-item__text">Zoom with Dante : Topic "Data Mining"</div>
+            <div class="ae-activity-item__time">Besok</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mentor -->
+      <div>
+        <div class="ae-card">
+          <div class="ae-section-header">
+            <span class="ae-section-title">Recommended Mentor</span>
+            <button class="ae-btn-view-all" onclick="viewAllMentor()">☰ View All</button>
+          </div>
+          <div class="ae-mentor-item" onclick="viewAllMentor()">
+            <div class="ae-mentor-item__avatar" style="background:#9e7a76">J</div>
+            <div class="ae-mentor-item__info">
+              <div class="ae-mentor-item__name">Jessica <span class="ae-mentor-item__star">★</span><span
+                  class="ae-mentor-item__rating">4.9</span></div>
+              <div class="ae-mentor-item__sub">Mentor Mata Kuliah Basis Data</div>
+            </div>
+            <div class="ae-mentor-item__helped">200++ dibantu</div>
+          </div>
+          <div class="ae-mentor-item" onclick="viewAllMentor()">
+            <div class="ae-mentor-item__avatar" style="background:#7a8e9e">R</div>
+            <div class="ae-mentor-item__info">
+              <div class="ae-mentor-item__name">Raymond <span class="ae-mentor-item__star">★</span><span
+                  class="ae-mentor-item__rating">4.8</span></div>
+              <div class="ae-mentor-item__sub">Mentor Mata Kuliah Cyber Security</div>
+            </div>
+            <div class="ae-mentor-item__helped">180++ dibantu</div>
+          </div>
+          <div class="ae-mentor-item" onclick="viewAllMentor()">
+            <div class="ae-mentor-item__avatar" style="background:#7a9e80">M</div>
+            <div class="ae-mentor-item__info">
+              <div class="ae-mentor-item__name">Maya R. <span class="ae-mentor-item__star">★</span><span
+                  class="ae-mentor-item__rating">4.7</span></div>
+              <div class="ae-mentor-item__sub">Mentor AI Fundamentals</div>
+            </div>
+            <div class="ae-mentor-item__helped">150++ dibantu</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</main>
+  </main>
 
-<!-- MODALS -->
-<div class="ae-modal-overlay" id="ae-modal-schedule">
-  <div class="ae-modal" style="min-width:680px">
-    <div class="ae-modal__header"><span class="ae-modal__title">Semua Jadwal</span><button class="ae-modal__close" onclick="closeModal('ae-modal-schedule')">✕</button></div>
-    <table class="ae-table"><thead><tr><th>Mata Kuliah</th><th>Tanggal</th><th>Waktu</th><th>Mentor</th><th>Platform</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="ae-schedule-tbody"></tbody></table>
-  </div>
-</div>
-<div class="ae-modal-overlay" id="ae-modal-activity">
-  <div class="ae-modal" style="min-width:580px">
-    <div class="ae-modal__header"><span class="ae-modal__title">Semua Aktivitas</span><button class="ae-modal__close" onclick="closeModal('ae-modal-activity')">✕</button></div>
-    <table class="ae-table"><thead><tr><th>Aktivitas</th><th>Waktu</th><th>Status</th></tr></thead><tbody id="ae-activity-tbody"></tbody></table>
-  </div>
-</div>
-<div class="ae-modal-overlay" id="ae-modal-mentor">
-  <div class="ae-modal" style="min-width:500px">
-    <div class="ae-modal__header"><span class="ae-modal__title">Semua Mentor</span><button class="ae-modal__close" onclick="closeModal('ae-modal-mentor')">✕</button></div>
-    <div id="ae-mentor-modal-list"></div>
-  </div>
-</div>
-<div class="ae-modal-overlay" id="ae-modal-exit">
-  <div class="ae-modal" style="min-width:380px;max-width:420px">
-    <div class="ae-modal__header"><span class="ae-modal__title">Apakah Anda yakin ingin keluar?</span><button class="ae-modal__close" onclick="closeModal('ae-modal-exit')">✕</button></div>
-    <p class="ae-modal__body">Anda akan keluar dari Aether. Semua data Anda tetap tersimpan dengan aman.</p>
-    <div class="ae-modal__footer">
-      <button class="ae-btn ae-btn--secondary" onclick="closeModal('ae-modal-exit')">Tidak</button>
-      <button class="ae-btn ae-btn--primary" onclick="closeModal('ae-modal-exit');showToast('Sampai jumpa! 👋','success')">Iya</button>
+  <!-- MODALS -->
+  <div class="ae-modal-overlay" id="ae-modal-schedule">
+    <div class="ae-modal" style="min-width:680px">
+      <div class="ae-modal__header"><span class="ae-modal__title">Semua Jadwal</span><button class="ae-modal__close"
+          onclick="closeModal('ae-modal-schedule')">✕</button></div>
+      <table class="ae-table">
+        <thead>
+          <tr>
+            <th>Mata Kuliah</th>
+            <th>Tanggal</th>
+            <th>Waktu</th>
+            <th>Mentor</th>
+            <th>Platform</th>
+            <th>Status</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="ae-schedule-tbody"></tbody>
+      </table>
     </div>
   </div>
-</div>
+  <div class="ae-modal-overlay" id="ae-modal-activity">
+    <div class="ae-modal" style="min-width:580px">
+      <div class="ae-modal__header"><span class="ae-modal__title">Semua Aktivitas</span><button class="ae-modal__close"
+          onclick="closeModal('ae-modal-activity')">✕</button></div>
+      <table class="ae-table">
+        <thead>
+          <tr>
+            <th>Aktivitas</th>
+            <th>Waktu</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="ae-activity-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="ae-modal-overlay" id="ae-modal-mentor">
+    <div class="ae-modal" style="min-width:500px">
+      <div class="ae-modal__header"><span class="ae-modal__title">Semua Mentor</span><button class="ae-modal__close"
+          onclick="closeModal('ae-modal-mentor')">✕</button></div>
+      <div id="ae-mentor-modal-list"></div>
+    </div>
+  </div>
+  <div class="ae-modal-overlay" id="ae-modal-exit">
+    <div class="ae-modal" style="min-width:380px;max-width:420px">
+      <div class="ae-modal__header"><span class="ae-modal__title">Apakah Anda yakin ingin keluar?</span><button
+          class="ae-modal__close" onclick="closeModal('ae-modal-exit')">✕</button></div>
+      <p class="ae-modal__body">Anda akan keluar dari Aether. Semua data Anda tetap tersimpan dengan aman.</p>
+      <div class="ae-modal__footer">
+        <button class="ae-btn ae-btn--secondary" onclick="closeModal('ae-modal-exit')">Tidak</button>
+        <button class="ae-btn ae-btn--primary"
+          onclick="closeModal('ae-modal-exit');window.location.href='../index.html'">Iya</button>
+      </div>
+    </div>
+  </div>
 
-<div class="ae-toast-container" id="ae-toast-container"></div>
-<script src="../js/app.js"></script>
-<script src="../js/home.js"></script>
+  <div class="ae-toast-container" id="ae-toast-container"></div>
+  <script src="../js/app.js"></script>
+  <script src="../js/home.js"></script>
 </body>
+
 </html>

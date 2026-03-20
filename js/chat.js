@@ -15,8 +15,8 @@ const chatState = {
       id: 1, name: 'Julius', initial: 'J', color: '#7a8e9e',
       online: true, unread: true, favorit: false,
       messages: [
-        { from: 'them', text: 'Hallo ?',      time: '12.00', date: 'Kamis' },
-        { from: 'me',   text: 'Hallo Juga ?', time: '12.00', date: 'Kamis' },
+        { from: 'them', text: 'Hallo ?', time: '12.00', date: 'Kamis' },
+        { from: 'me', text: 'Hallo Juga ?', time: '12.00', date: 'Kamis' },
       ],
     },
     {
@@ -31,22 +31,22 @@ const chatState = {
       online: true, unread: false, favorit: false,
       messages: [
         { from: 'them', text: 'Materinya sudah saya kirim ya!', time: '10.00', date: 'Rabu' },
-        { from: 'me',   text: 'Siap, terima kasih Kak!',       time: '10.05', date: 'Rabu' },
+        { from: 'me', text: 'Siap, terima kasih Kak!', time: '10.05', date: 'Rabu' },
       ],
     },
   ],
-  activeId    : null,
-  filter      : 'all',    // 'all' | 'unread' | 'favorit'
-  searchQuery : '',
+  activeId: null,
+  filter: 'all',    // 'all' | 'unread' | 'favorit'
+  searchQuery: '',
 };
 
 /* ─────────────────────────────────────────
    HELPERS
 ───────────────────────────────────────── */
-const $  = id  => document.getElementById(id);
+const $ = id => document.getElementById(id);
 const getNow = () => {
   const d = new Date();
-  return `${String(d.getHours()).padStart(2,'0')}.${String(d.getMinutes()).padStart(2,'0')}`;
+  return `${String(d.getHours()).padStart(2, '0')}.${String(d.getMinutes()).padStart(2, '0')}`;
 };
 const getContact = id => chatState.contacts.find(c => c.id === id);
 
@@ -57,7 +57,7 @@ function renderContactList() {
   const { contacts, filter, searchQuery, activeId } = chatState;
 
   let list = contacts.filter(c => {
-    if (filter === 'unread')  return c.unread;
+    if (filter === 'unread') return c.unread;
     if (filter === 'favorit') return c.favorit;
     return true;
   });
@@ -74,7 +74,7 @@ function renderContactList() {
   }
 
   container.innerHTML = list.map(c => {
-    const last    = c.messages.at(-1);
+    const last = c.messages.at(-1);
     const preview = last
       ? (last.from === 'me' ? `Kamu: ${last.text}` : `${c.name}: ${last.text}`)
       : 'Belum ada pesan';
@@ -99,7 +99,7 @@ function renderContactList() {
    RENDER MESSAGES
 ───────────────────────────────────────── */
 function renderMessages(contactId) {
-  const c    = getContact(contactId);
+  const c = getContact(contactId);
   const area = $('ae-chat-messages');
 
   if (!c) {
@@ -147,11 +147,11 @@ function selectContact(id) {
   c.unread = false;
   renderContactList();
 
-  $('ae-chat-contact-name').textContent   = c.name;
+  $('ae-chat-contact-name').textContent = c.name;
   $('ae-chat-contact-status').textContent = c.online ? 'Online' : 'Offline';
   $('ae-chat-contact-status').style.color = c.online ? '#5cb85c' : '#bbb';
-  $('ae-chat-window-avatar').textContent        = c.initial;
-  $('ae-chat-window-avatar').style.background   = c.color;
+  $('ae-chat-window-avatar').textContent = c.initial;
+  $('ae-chat-window-avatar').style.background = c.color;
 
   updateStarBtn(c);
   renderMessages(id);
@@ -163,12 +163,12 @@ function selectContact(id) {
 ───────────────────────────────────────── */
 function sendMessage() {
   const input = $('ae-chat-input');
-  const text  = input.value.trim();
+  const text = input.value.trim();
 
   if (!chatState.activeId) { showToast('Pilih kontak terlebih dahulu!', 'error'); return; }
   if (!text) return;
 
-  const c   = getContact(chatState.activeId);
+  const c = getContact(chatState.activeId);
   const now = getNow();
   c.messages.push({ from: 'me', text, time: now, date: 'Hari ini' });
 
@@ -191,7 +191,7 @@ function simulateReply(contact) {
   // Show typing indicator
   const typingEl = document.createElement('div');
   typingEl.className = 'ae-msg';
-  typingEl.id        = 'ae-typing-indicator';
+  typingEl.id = 'ae-typing-indicator';
   typingEl.innerHTML = `
     <div class="ae-msg__avatar" style="background:${contact.color}">${contact.initial}</div>
     <div class="ae-msg__wrap">
@@ -224,7 +224,7 @@ function simulateReply(contact) {
 ───────────────────────────────────────── */
 function toggleFavorit() {
   if (!chatState.activeId) return;
-  const c   = getContact(chatState.activeId);
+  const c = getContact(chatState.activeId);
   c.favorit = !c.favorit;
   updateStarBtn(c);
   renderContactList();
@@ -237,7 +237,7 @@ function toggleFavorit() {
 function updateStarBtn(c) {
   const svg = $('ae-btn-favorit')?.querySelector('svg');
   if (!svg) return;
-  svg.setAttribute('fill',   c.favorit ? '#f0a830' : 'none');
+  svg.setAttribute('fill', c.favorit ? '#f0a830' : 'none');
   svg.setAttribute('stroke', c.favorit ? '#f0a830' : 'currentColor');
 }
 
@@ -287,26 +287,26 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Auto-open contact from query param (?kontak=Nama)
-  const params     = new URLSearchParams(window.location.search);
+  const params = new URLSearchParams(window.location.search);
   const namaKontak = params.get('kontak');
   if (namaKontak) {
     const decoded = decodeURIComponent(namaKontak);
-    let target    = chatState.contacts.find(
+    let target = chatState.contacts.find(
       c => c.name.toLowerCase() === decoded.toLowerCase()
     );
 
     if (!target) {
       // Create new contact on the fly (e.g. mentor redirect)
-      const COLORS  = ['#9e7a76','#7a8e9e','#7a9e80','#9e9a7a','#7a7a9e','#9e8a7a'];
-      const initial = decoded.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase();
+      const COLORS = ['#9e7a76', '#7a8e9e', '#7a9e80', '#9e9a7a', '#7a7a9e', '#9e8a7a'];
+      const initial = decoded.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
       target = {
-        id      : Date.now(),
-        name    : decoded,
+        id: Date.now(),
+        name: decoded,
         initial,
-        color   : COLORS[Math.floor(Math.random() * COLORS.length)],
-        online  : true,
-        unread  : false,
-        favorit : false,
+        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+        online: true,
+        unread: false,
+        favorit: false,
         messages: [],
       };
       chatState.contacts.push(target);

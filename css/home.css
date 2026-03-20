@@ -9,8 +9,17 @@
   align-items: flex-start;
   margin-bottom: 28px;
 }
-.ae-home__welcome h1 { font-size: 28px; font-weight: 700; }
-.ae-home__welcome p  { font-size: 13px; color: var(--ae-text-secondary); margin-top: 4px; }
+
+.ae-home__welcome h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.ae-home__welcome p {
+  font-size: 13px;
+  color: var(--ae-text-secondary);
+  margin-top: 4px;
+}
 
 .ae-user-card {
   background: var(--ae-card-bg);
@@ -22,16 +31,41 @@
   box-shadow: var(--ae-shadow);
   min-width: 200px;
 }
+
 .ae-user-card__avatar {
-  width: 48px; height: 48px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: var(--ae-accent-muted);
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700; color: #fff; font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+  font-size: 16px;
 }
-.ae-user-card__info    { display: flex; flex-direction: column; }
-.ae-user-card__name    { font-weight: 600; font-size: 14px; }
-.ae-user-card__handle  { font-size: 11px; color: var(--ae-text-muted); }
+
+.ae-user-card:hover {
+  box-shadow: var(--ae-shadow-md);
+  cursor: pointer;
+  transform: translateY(-1px);
+  transition: all var(--ae-transition);
+}
+
+.ae-user-card__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.ae-user-card__name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.ae-user-card__handle {
+  font-size: 11px;
+  color: var(--ae-text-muted);
+}
 
 /* ── STATS GRID ── */
 .ae-stats-grid {
@@ -40,6 +74,7 @@
   gap: 14px;
   margin-bottom: 28px;
 }
+
 .ae-stat-card {
   background: var(--ae-card-bg);
   border-radius: var(--ae-radius);
@@ -48,7 +83,12 @@
   transition: transform var(--ae-transition), box-shadow var(--ae-transition);
   cursor: default;
 }
-.ae-stat-card:hover { transform: translateY(-2px); box-shadow: var(--ae-shadow-md); }
+
+.ae-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ae-shadow-md);
+}
+
 .ae-stat-card__label {
   font-size: 12px;
   color: var(--ae-text-secondary);
@@ -56,11 +96,23 @@
   align-items: center;
   gap: 6px;
 }
-.ae-stat-card__value { font-size: 28px; font-weight: 700; margin-top: 6px; }
-.ae-stat-card__stars { margin-top: 6px; }
+
+.ae-stat-card__value {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+.ae-stat-card__stars {
+  margin-top: 6px;
+}
 
 /* ── TWO-COLUMN GRID ── */
-.ae-home__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.ae-home__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
 
 /* ── SCHEDULE ── */
 .ae-schedule-item {
@@ -73,17 +125,36 @@
   margin-bottom: 10px;
   transition: box-shadow var(--ae-transition);
 }
-.ae-schedule-item:hover { box-shadow: var(--ae-shadow); }
+
+.ae-schedule-item:hover {
+  box-shadow: var(--ae-shadow);
+}
+
 .ae-schedule-item__icon {
-  width: 36px; height: 36px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: #eee;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
-.ae-schedule-item__info  { flex: 1; }
-.ae-schedule-item__name  { font-size: 13px; font-weight: 600; }
-.ae-schedule-item__meta  { font-size: 11px; color: var(--ae-text-muted); margin-top: 2px; }
+
+.ae-schedule-item__info {
+  flex: 1;
+}
+
+.ae-schedule-item__name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ae-schedule-item__meta {
+  font-size: 11px;
+  color: var(--ae-text-muted);
+  margin-top: 2px;
+}
 
 /* ── ACTIVITY LOG ── */
 .ae-activity-item {
@@ -94,12 +165,36 @@
   border-bottom: 1px solid var(--ae-border);
   font-size: 12px;
 }
-.ae-activity-item:last-child { border-bottom: none; }
-.ae-activity-item__dot  { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-.ae-dot--green { background: #5cb85c; }
-.ae-dot--gray  { background: #bbb; }
-.ae-activity-item__text { flex: 1; color: var(--ae-text-secondary); }
-.ae-activity-item__time { color: var(--ae-text-muted); font-size: 11px; white-space: nowrap; }
+
+.ae-activity-item:last-child {
+  border-bottom: none;
+}
+
+.ae-activity-item__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ae-dot--green {
+  background: #5cb85c;
+}
+
+.ae-dot--gray {
+  background: #bbb;
+}
+
+.ae-activity-item__text {
+  flex: 1;
+  color: var(--ae-text-secondary);
+}
+
+.ae-activity-item__time {
+  color: var(--ae-text-muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
 
 /* ── MENTOR LIST ── */
 .ae-mentor-item {
@@ -113,17 +208,53 @@
   cursor: pointer;
   transition: box-shadow var(--ae-transition);
 }
-.ae-mentor-item:hover { box-shadow: var(--ae-shadow); }
+
+.ae-mentor-item:hover {
+  box-shadow: var(--ae-shadow);
+}
+
 .ae-mentor-item__avatar {
-  width: 40px; height: 40px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: var(--ae-accent-muted);
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 600; color: #fff; font-size: 14px; flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #fff;
+  font-size: 14px;
+  flex-shrink: 0;
 }
-.ae-mentor-item__info   { flex: 1; }
-.ae-mentor-item__name   { font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
-.ae-mentor-item__star   { color: #f0a830; }
-.ae-mentor-item__rating { font-size: 12px; }
-.ae-mentor-item__sub    { font-size: 11px; color: var(--ae-text-muted); margin-top: 2px; }
-.ae-mentor-item__helped { font-size: 11px; color: var(--ae-text-muted); white-space: nowrap; }
+
+.ae-mentor-item__info {
+  flex: 1;
+}
+
+.ae-mentor-item__name {
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ae-mentor-item__star {
+  color: #f0a830;
+}
+
+.ae-mentor-item__rating {
+  font-size: 12px;
+}
+
+.ae-mentor-item__sub {
+  font-size: 11px;
+  color: var(--ae-text-muted);
+  margin-top: 2px;
+}
+
+.ae-mentor-item__helped {
+  font-size: 11px;
+  color: var(--ae-text-muted);
+  white-space: nowrap;
+}
